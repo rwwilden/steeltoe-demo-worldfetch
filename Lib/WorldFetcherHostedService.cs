@@ -13,10 +13,10 @@ namespace worldfetch.Lib
             this.dataOptionsAccessor = dataOptionsAccessor;
         }
 
-        protected override Task ExecuteAsync(CancellationToken cancellationToken)
+        protected override Task ExecuteAsync(CancellationToken ct)
         {
             var dataOptions = dataOptionsAccessor.Value;
-            var dataUrl = dataOptions.DataUrl;
+            var dataBaseUrl = dataOptions.DataBaseUrl;
 
             throw new System.NotImplementedException();
         }
