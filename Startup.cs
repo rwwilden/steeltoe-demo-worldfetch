@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using worldfetch.Lib;
 
 namespace worldfetch
 {
@@ -24,6 +25,7 @@ namespace worldfetch
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<DataOptions>(Configuration);
             services.AddSingleton<IHostedService, WorldFetcherHostedService>();
             services.AddMvc();
         }
