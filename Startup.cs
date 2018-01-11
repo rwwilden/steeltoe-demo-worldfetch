@@ -25,7 +25,7 @@ namespace worldfetch
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<DataOptions>(Configuration);
+            services.Configure<FetcherOptions>(Configuration);
             services.AddSingleton<IHostedService, WorldFetcherHostedService>();
             services.AddMvc();
         }

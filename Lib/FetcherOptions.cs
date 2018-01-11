@@ -1,6 +1,6 @@
 namespace worldfetch.Lib
 {
-    public class DataOptions
+    public class FetcherOptions
     {
         public string BaseDataUri { get; set; }
     }

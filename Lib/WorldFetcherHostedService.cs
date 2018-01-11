@@ -14,9 +14,9 @@ namespace worldfetch.Lib
         // https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/
         private static HttpClient HttpClient = new HttpClient();
 
-        private readonly IOptions<DataOptions> dataOptionsAccessor;
+        private readonly IOptions<FetcherOptions> dataOptionsAccessor;
 
-        public WorldFetcherHostedService(IOptions<DataOptions> dataOptionsAccessor)
+        public WorldFetcherHostedService(IOptions<FetcherOptions> dataOptionsAccessor)
         {
             this.dataOptionsAccessor = dataOptionsAccessor;
         }
