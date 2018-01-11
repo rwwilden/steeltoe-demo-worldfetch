@@ -1,4 +1,4 @@
-namespace HostedService
+namespace worldfetch.Lib
 {
     using System.Threading;
     using System.Threading.Tasks;
