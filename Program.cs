@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Steeltoe.Extensions.Configuration.ConfigServer;
 
 namespace worldfetch
 {
@@ -19,6 +20,11 @@ namespace worldfetch
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((webHostBuilderContext, configurationBuilder) => {
+                    
+                    var hostingEnvironment = webHostBuilderContext.HostingEnvironment;
+                    configurationBuilder.AddConfigServer(hostingEnvironment.EnvironmentName);
+                })
                 .UseStartup<Startup>()
                 .Build();
     }
