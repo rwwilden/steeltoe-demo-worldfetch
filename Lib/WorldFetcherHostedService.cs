@@ -25,6 +25,7 @@ namespace worldfetch.Lib
         {
             var dataOptions = dataOptionsAccessor.Value;
             var baseDataUri = dataOptions.BaseDataUri;
+            var fetchInterval = dataOptions.FetchInterval;
 
             while (!ct.IsCancellationRequested)
             {
@@ -49,7 +50,7 @@ namespace worldfetch.Lib
                 var dataJArray = new JArray(dataJArrays.SelectMany(array => array));
 
                 // Wait one minute before next pull.
-                await Task.Delay(TimeSpan.FromMinutes(5));
+                await Task.Delay(fetchInterval);
             }
         }
     }
