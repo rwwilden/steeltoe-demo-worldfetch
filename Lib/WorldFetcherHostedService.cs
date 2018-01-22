@@ -55,7 +55,7 @@ namespace worldfetch.Lib
                 var dataJArrays = await Task.WhenAll(fetchTasks);
                 var dataJArray = new JArray(dataJArrays.SelectMany(array => array));
 
-                // Wait one minute before next pull.
+                // Wait before next pull.
                 await Task.Delay(fetchInterval, ct);
             }
         }
